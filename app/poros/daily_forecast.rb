@@ -1,4 +1,4 @@
-class DailyForecast
+class DailyForecast < PoroObject
   attr_reader :daily_date,
               :daily_sunrise,
               :daily_sunset,
@@ -14,9 +14,5 @@ class DailyForecast
     @daily_min_temp = data[:temp][:min]
     @daily_conditions = data[:weather][0][:description]
     @daily_icon = data[:weather][0][:icon]
-  end
-
-  def translate_unix_time(integer)
-    Time.at(integer)
   end
 end

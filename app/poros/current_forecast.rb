@@ -1,5 +1,4 @@
-# make this into current forecast
-class CurrentForecast
+class CurrentForecast < PoroObject
   attr_reader :datetime,
               :sunrise,
               :sunset,
@@ -22,9 +21,5 @@ class CurrentForecast
     @visibility = data[:current][:visibility]
     @conditions = data[:current][:weather][0][:description]
     @icon = data[:current][:weather][0][:icon]
-  end
-
-  def translate_unix_time(integer)
-    Time.at(integer)
   end
 end
