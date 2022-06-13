@@ -8,10 +8,4 @@ describe 'books facade' do
     this_book = result.first
     expect(this_book).to be_a(Book)
   end
-
-  it 'search results do not exceed quantity' do
-    boolean = result[:docs].count < 5
-
-    expect(boolean).to eq(true)
-  end
 end
