@@ -1,11 +1,11 @@
 class Api::V1::BooksSerializer
-  def self.list_book_results(books, forecast)
+  def self.list_book_results(books, forecast, city)
     {
       data: {
         id: nil,
         type: "books",
         attributes: {
-          destination: books.first.destination_city,
+          destination: city,
           forecast: {
             summary: forecast.conditions,
             temperature: forecast.temp

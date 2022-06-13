@@ -5,7 +5,5 @@ class Api::V1::ForecastController < ApplicationController
     all_weather = ForecastFacade.get_each_weather(city)
 
     render json: Api::V1::ForecastSerializer.forecast_index(all_weather[0], all_weather[1], all_weather[2])
-
-    # PhotoFacade.get_city_image(city)
   end
 end
