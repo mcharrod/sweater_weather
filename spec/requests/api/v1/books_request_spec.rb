@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'books serializer' do
-
   it 'retrieves data in proper hash' do
     get api_v1_book_search_path(location: "denver", quantity: 5)
 
@@ -12,8 +11,8 @@ describe 'books serializer' do
 
     expect(parsed[:data]).to have_key(:attributes)
     expect(parsed[:data][:attributes][:total_books_found]).to be_an(Integer)
+    expect(parsed[:data][:attributes][:total_books_found]).to eq(5)
     expect(parsed[:data][:attributes][:destination]).to eq("denver")
-
 
     # testing each book in the serializer
     expect(parsed[:data][:attributes][:books]).to be_an(Array)
