@@ -6,6 +6,7 @@ class ForecastService < BaseService
 
     faraday.params['lat'] = coordinates[:results][0][:locations][0][:latLng][:lat]
     faraday.params['lon'] = coordinates[:results][0][:locations][0][:latLng][:lng]
+    faraday.params['units'] = 'imperial'
     end
     JSON.parse(response.body, symbolize_names: true)
 
