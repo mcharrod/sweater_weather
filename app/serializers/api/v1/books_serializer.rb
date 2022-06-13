@@ -1,5 +1,5 @@
 class Api::V1::BooksSerializer
-  def self.list_book_results(books, forecast, city, limit)
+  def self.list_book_results(books, forecast, city)
     {
       data: {
         id: nil,
@@ -11,7 +11,7 @@ class Api::V1::BooksSerializer
             temperature: forecast.temp
           },
           total_books_found: books.count,
-          books: books[0..limit.to_i].map do |book|
+          books: books.map do |book|
             {
               isbn: book.isbn,
               title: book.title,
