@@ -16,4 +16,8 @@ class BaseService
       faraday.params['client_id'] = ENV['unsplash_api_key']
     end
   end
+
+  def self.library_conn
+    Faraday.new('http://openlibrary.org')
+  end
 end
