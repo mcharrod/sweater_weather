@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       # resources :backgrounds, only:[:show]
 
       get '/backgrounds', to: 'backgrounds#show'
+      get '/book-search', to: 'books#index'
     end
   end
 end
