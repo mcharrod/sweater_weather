@@ -11,15 +11,15 @@ class CurrentForecast < PoroObject
               :icon
 
   def initialize(data)
-    @datetime = translate_unix_time(data[:current][:dt])
-    @sunrise = translate_unix_time(data[:current][:sunrise])
-    @sunset = translate_unix_time(data[:current][:sunset])
-    @temp = data[:current][:temp]
-    @feels_like = data[:current][:feels_like]
-    @humidity = data[:current][:humidity]
-    @uvi = data[:current][:uvi]
-    @visibility = data[:current][:visibility]
-    @conditions = data[:current][:weather][0][:description]
-    @icon = data[:current][:weather][0][:icon]
+    @datetime = translate_unix_time(data[:dt])
+    @sunrise = translate_unix_time(data[:sunrise])
+    @sunset = translate_unix_time(data[:sunset])
+    @temp = data[:temp]
+    @feels_like = data[:feels_like]
+    @humidity = data[:humidity]
+    @uvi = data[:uvi]
+    @visibility = data[:visibility]
+    @conditions = data[:weather][0][:description]
+    @icon = data[:weather][0][:icon]
   end
 end
