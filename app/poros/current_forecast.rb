@@ -12,9 +12,9 @@ class CurrentForecast
               :icon
 
   def initialize(data)
-    @datetime = data[:current][:dt]
-    @sunrise = data[:current][:sunrise]
-    @sunset = data[:current][:sunset]
+    @datetime = translate_unix_time(data[:current][:dt])
+    @sunrise = translate_unix_time(data[:current][:sunrise])
+    @sunset = translate_unix_time(data[:current][:sunset])
     @temp = data[:current][:temp]
     @feels_like = data[:current][:feels_like]
     @humidity = data[:current][:humidity]
@@ -22,5 +22,9 @@ class CurrentForecast
     @visibility = data[:current][:visibility]
     @conditions = data[:current][:weather][0][:description]
     @icon = data[:current][:weather][0][:icon]
+  end
+
+  def translate_unix_time(integer)
+    Time.at(integer)
   end
 end
