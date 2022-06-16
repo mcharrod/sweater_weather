@@ -7,7 +7,7 @@ class Api::V1::RoadTripController < ApplicationController
           render json: { message: "trip is impossible"}
         else
           destination_conditions = RoadTripFacade.get_destination_conditions(params[:destination], trip.travel_time)
-          render json: RoadTripSerializer.get_roadtrip(params[:origin], params[:destination], trip)
+          render json: Api::V1::RoadTripSerializer.get_roadtrip(params[:origin], params[:destination], trip)
         end
     elsif user.nil?
       render json: { message: "bad request please try again" }, status: 401
