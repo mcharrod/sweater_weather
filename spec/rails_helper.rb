@@ -76,9 +76,12 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-# VCR.configure do |config|
-#   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-#   config.hook_into :webmock
-#   config.filter_sensitive_data('<api_key>') { ENV['parks_api_key'] }
-#   config.configure_rspec_metadata!
-# end
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.filter_sensitive_data('<api_key1>') { ENV['open_weather_api_key'] }
+  config.filter_sensitive_data('<api_key2>') { ENV['mapquest_api_key'] }
+  config.filter_sensitive_data('<api_key3>') { ENV['unsplash_api_key'] }
+  # config.default_cassette_options: { re_record_interval: 7.days, record: :}
+  config.configure_rspec_metadata!
+end

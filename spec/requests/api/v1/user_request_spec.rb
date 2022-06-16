@@ -18,6 +18,7 @@ describe 'user registration' do
   end
 
   it 'returns json of the user' do
+
     expected_response = {
       "data": {
         "type": "users",
