@@ -10,13 +10,13 @@ class ForecastFacade
   end
 
   def self.get_hourly_weather(weather)
-    weather.map do |hourly_forecast|
+    weather[0..7].map do |hourly_forecast|
       HourlyForecast.new(hourly_forecast)
     end
   end
 
   def self.get_daily_weather(weather)
-    weather.map do |daily_weather|
+    weather[0..4].map do |daily_weather|
       DailyForecast.new(daily_weather)
     end
   end
