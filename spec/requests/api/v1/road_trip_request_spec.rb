@@ -9,27 +9,25 @@ describe 'road trip API endpoint' do
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
 
-      json_response = File.read('spec/fixtures/vcr_cassettes/road_trip.json')
+      # json_response = File.read('spec/fixtures/vcr_cassettes/road_trip.json')
 
-    #
-    # expected_response = {
-    #   "data": {
-    #     "id": nil,
-    #     "type": "roadtrip",
-    #     "attributes": {
-    #       "start_city": "Denver, CO",
-    #       "end_city": "Estes Park, CO",
-    #       "travel_time": "01:22:19",
-    #       "weather_at_eta": {
-    #         "temperature": 59.4,
-    #         "conditions": "partly cloudy with a chance of meatballs"
-    #       }
-    #     }
-    #   }
-    # }
+      expected_response = {
+          "data": {
+              "id": nil,
+              "type": "roadtrip",
+              "attributes": {
+                  "start_city": "Denver,CO",
+                  "end_city": "Estes Park, CO",
+                  "travel_time": "01:22:19",
+                  "weather_at_eta": {
+                      "temperature": 49.89,
+                      "conditions": "clear sky"
+                  }
+              }
+          }
+      }
 
-
-      expect(parsed_response).to eq(json_response)
+      expect(parsed_response).to eq(expected_response)
     end
   end
 end
