@@ -1,5 +1,5 @@
 class Api::V1::RoadTripSerializer
-  def self.get_roadtrip(origin, destination, trip, destination_forecast)
+  def self.get_roadtrip(origin, destination, trip)
     # if trip.nil?
     #   trip = double("trip")
     #   allow(trip).to receive(:travel_time).and_return('impossible')
@@ -14,8 +14,8 @@ class Api::V1::RoadTripSerializer
           end_city: destination,
           travel_time: trip.travel_time,
           weather_at_eta: {
-            temperature: destination_forecast.temp || destination_forecast,
-            conditions: destionation_forecast.conditions
+            temperature: trip.destination_temp,
+            conditions: trip.destination_conditions
           }
         }
       }
