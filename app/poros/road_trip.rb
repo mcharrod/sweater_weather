@@ -13,18 +13,18 @@ class RoadTrip
     @destination_temp = destination_temp
     @destination_conditions = destination_conditions
   end
-
-  def determine_trip_time(travel_time)
-    if travel_time.nil?
-      "impossible trip"
-    elsif
-      human_read_travel_time(travel_time)
-    end
-  end
-
-  def human_read_travel_time(travel_time)
-    hours, minutes, seconds = travel_time.split(":")
-
-    hours + " hours and " + minutes + " minutes."
-  end
+  #
+  # def determine_trip_time(travel_time)
+  #   if travel_time.nil?
+  #     "impossible trip"
+  #   elsif
+  #     human_read_travel_time(travel_time)
+  #   end
+  # end
+  #
+  # def human_read_travel_time(travel_time)
+  #   hours, minutes, seconds = travel_time.split(":")
+  #
+  #   hours + " hours and " + minutes + " minutes."
+  # end
 end
