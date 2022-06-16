@@ -9,6 +9,5 @@ class ForecastService < BaseService
     faraday.params['units'] = 'imperial'
     end
     JSON.parse(response.body, symbolize_names: true)
-
   end
 end

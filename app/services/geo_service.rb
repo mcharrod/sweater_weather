@@ -5,9 +5,6 @@ class GeoService < BaseService
     end
 
     JSON.parse(response.body, symbolize_names: true)
-    #
-    # latitude = x[:results][0][:locations][0][:latLng][:lat]
-    # longitude = x[:results][0][:locations][0][:latLng][:lng]
   end
 
   def self.find_roadtrip_details(origin, destination)
@@ -15,9 +12,6 @@ class GeoService < BaseService
       faraday.params['from'] = origin
       faraday.params['to'] = destination
     end
-
     JSON.parse(response.body, symbolize_names: true)
   end
-
-
 end
