@@ -1,10 +1,5 @@
 class Api::V1::RoadTripSerializer
   def self.get_roadtrip(origin, destination, trip)
-    # if trip.nil?
-    #   trip = double("trip")
-    #   allow(trip).to receive(:travel_time).and_return('impossible')
-      # allow(trip).to receive(:)
-    # end
     {
       data: {
         id: nil,
