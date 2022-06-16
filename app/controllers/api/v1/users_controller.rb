@@ -4,15 +4,15 @@ class Api::V1::UsersController < ApplicationController
     if params[:password] != params[:password_confirmation]
       render json: { error: "passwords do not match"}, status: :bad_request
     elsif params[:email].nil? || params[:password].nil? || params[:password_confirmation].nil?
-      render json: { error: "missing a field"}, status: :bad_request
+      render json: { error: "please fill all fields"}, status: :bad_request
     elsif User.find_by(email: params[:email])
       render json: { error: "email already exists"}, status: :bad_request
-    else
-      user.assign_api_key
-      user.save
+    elsif user.save
       render json: Api::V1::UsersSerializer.hashed(user), status: 201
     end
   end
+
+
 
   private
   def user_params
