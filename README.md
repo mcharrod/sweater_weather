@@ -11,7 +11,8 @@ Sweater Weather is a backend application that exposes a number of external APIs 
 3. Setup the database: `$ rails db:{create,migrate}`
 
 ### API Setup
-1. Sign up for API keys from the following:
+1. Sign up for API keys from the list below. Wait! How do I sign up for an API key?? It's going to be slightly different for each website, but you are essentially looking for something in the documentation where you can sign up for an account. 
+
 *note* One API key will suffice for both MapQuest endpoints. The links provided will take you to the respective documentation pages where you can sign up to get an API key for your device.
 
 - MapQuest Geocoding API [here](https://developer.mapquest.com/documentation/geocoding-api/)
@@ -20,7 +21,7 @@ Sweater Weather is a backend application that exposes a number of external APIs 
 - Unsplash [here](https://unsplash.com/documentation#search-photos)
 
 2. From the command line, run the following: `$ bundle exec figaro install`
-3. In the command line, run `$ atom config/application.yml`
+3. In the command line, run `$ atom config/application.yml` to open up your file. If using a different text editor, replace the word "atom" with the proper command for your text editor. 
 4. Copy the following code and replace 'YOUR-API-KEY' with their corresponding credentials:
   ```
   mapquest_key: 'YOUR-API-KEY'
