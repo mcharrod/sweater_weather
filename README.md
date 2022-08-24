@@ -3,7 +3,7 @@
 
 ### <ins>Overview</ins>
 
-Sweater Weather is a backend application that exposes a number of external APIs for a hypothetical front end app.
+Sweater Weather is a backend application that exposes a number of external APIs reformatted to provide a simpler service for a hypothetical front end app to consume.
 
 ### Setup
 1. Fork and Clone the repo
