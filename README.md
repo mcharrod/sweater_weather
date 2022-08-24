@@ -31,7 +31,7 @@ Sweater Weather is a backend application that exposes a number of external APIs 
 
 #### Framework
 <p>
-  <img src="https://img.shields.io/badge/Ruby%20On%20Rails-b81818.svg?&style=flat&logo=rubyonrails&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ruby%20On%20Rails-b81818.svg?&style=plastic&logo=rubyonrails&logoColor=white" />
 </p>
 
 #### Languages
